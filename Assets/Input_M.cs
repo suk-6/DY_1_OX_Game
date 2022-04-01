@@ -28,10 +28,12 @@ public class Input_M : MonoBehaviour
     }
     public void push()
     {
+        if (input.text == "") return;
+
         input_data = input.text;
         if (input_data == answer[index++])
             score++;
-            q.text = data[index];
+        q.text = data[index];
         input.text = "";
         Debug.Log(score);
     }

@@ -22,12 +22,16 @@ public class Input_M : MonoBehaviour
     private string input_data;
     private int index = 0;
     private int score;
-
+    public Text q;
+    private void Start() {
+        q.text = data[index];
+    }
     public void push()
     {
         input_data = input.text;
         if (input_data == answer[index++])
             score++;
+            q.text = data[index];
         input.text = "";
         Debug.Log(score);
     }
